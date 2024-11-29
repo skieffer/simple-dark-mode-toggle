@@ -1,0 +1,26 @@
+{
+  "name": "simple-dark-mode-toggle",
+  "version": "0.1.0",
+  "description": "A simple dark mode toggle",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skieffer/simple-dark-mode-toggle"
+  },
+  "main": "lib/main",
+  "types": "lib/main",
+  "files": [
+    "lib",
+    "src/dark-mode.css",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": ["dark", "mode"],
+  "author": "Steve Kieffer",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "compile": "tsc"
+  }
+}

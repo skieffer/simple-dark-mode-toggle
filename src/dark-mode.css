@@ -1,0 +1,6 @@
+/* This is a simple suggestion for one way to achieve a dark mode on
+ * an otherwise light-mode page.
+ */
+body.dark-mode {
+    filter: invert(0.8) hue-rotate(180deg);
+}
