@@ -6,7 +6,9 @@ Easily add a sun/moon toggle button to any page, which:
 * Stores the setting in `localStorage` (or `sessionStorage`, or not
   at all -- configurable).
 
-### Usage
+Can be used both in pages, and in browser extensions.
+
+## Usage in web page
 
 **mypage.html:**
 
@@ -74,3 +76,44 @@ Default: "dark-mode".
 * `darkByDefault`: Boolean, saying whether you want dark mode to be the default
 setting, before the first time the user makes a choice.
 Default: true.
+
+Example:
+
+```js
+setupDarkMode(toggle, {
+  classElement: document.querySelector('#myOuterDiv'),
+  darkClassName: 'dark-mode-2',
+  title: 'Save your eyes!',
+  storage: 'session',
+  storageName: 'alternative-dark-mode',
+  darkByDefault: false
+});
+```
+
+## Usage in browser extension
+
+Browser extensions get their own storage (both local and session), separate from
+the page's storage. If you prefer to use this storage to remember dark mode settings
+in an extension content script, you must use the `setupDarkModeForExt()` function:
+
+**myContentScript.js:**
+
+```js
+import { setupDarkModeForExt } from "simple-dark-mode-toggle";
+
+const toggle = document.querySelector('#darkModeToggle');
+await setupDarkModeForExt(toggle);
+```
+
+Note use of `await`, since extension storage works asynchronously.
+
+When passing an options object, you should still use `local` or `session` as the value of
+the `storage` option:
+
+```js
+await setupDarkModeForExt(toggle, {
+    storage: 'local'
+});
+```
+
+and this will mean the *extension's* local or session storage, accordingly.

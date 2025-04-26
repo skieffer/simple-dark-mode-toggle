@@ -1,6 +1,6 @@
 {
   "name": "simple-dark-mode-toggle",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A simple dark mode toggle",
   "repository": {
     "type": "git",
@@ -14,10 +14,15 @@
     "LICENSE",
     "README.md"
   ],
-  "keywords": ["dark", "mode"],
+  "keywords": [
+    "dark",
+    "mode"
+  ],
   "author": "Steve Kieffer",
   "license": "MIT",
   "devDependencies": {
+    "@types/chrome": "^0.0.315",
+    "@types/firefox-webext-browser": "^120.0.4",
     "typescript": "^5.7.2"
   },
   "scripts": {
